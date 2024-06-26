@@ -1,0 +1,17 @@
+.will-home-title {
+  background-color: #eae1d3;
+  position: relative;
+  z-index: 1;
+  display: inline;
+  padding-right: 30px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+
+.line-deco {
+  background-color: #000;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 10%;
+}
