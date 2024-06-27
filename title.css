@@ -25,13 +25,12 @@
 }
 
 .custom-banner-1 {
-    justify-content: center;
+  justify-content: center;
 }
 
 .banner-height {
   max-height: 500px !important;
   height: 39vw !important;
-  padding: 30px 25px;
 }
 
 .banner-image {
@@ -55,6 +54,7 @@
   width: 100%;
   background-color: #ebdec0;
   border-radius: 0 20px 20px 0;
+  padding: 30px 25px;
 }
 
 .banner-content-box-1 {
@@ -97,25 +97,35 @@
 }
 
 .custom-banner-2 .banner-content-box-1 {
-    border: 6px solid #0071A7;   
+  border: 6px solid #0071a7;
 }
 
 .custom-banner-2 .banner-content-box-1 * {
-    color: #0071A7!important;
+  color: #0071a7 !important;
 }
 
 .custom-banner-2 .banner-content-box-2 h5 {
-    font-size: 19px;
+  font-size: 19px;
 }
 
 .custom-banner-2 .banner-content {
-    border-radius: 20px!important;
-    position: relative;
-    z-index: 1
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.custom-banner-2 .banner-image img {
-    border-radius: 20px
+.custom-banner-2 .banner-image, .custom-banner-2 .banner-image .banner-bg {
+  border-radius: 20px;
+}
+
+.custom-banner-2 .banner-l {
+  position: relative;
+  z-index: 1
+}
+
+.custom-banner-2 .banner-r {
+  transform: translate(-30px, 80px);
 }
 
 .no-padding {
@@ -127,54 +137,51 @@
 }
 
 /* 特別為Banner設置的 */
-@media screen and (max-width: 1300px) and (min-width: 850px) {
-    .banner-content-box-2 h4 {
-        font-size: 2.3vw;
-    }
-    .banner-content-box-2 span {
-        font-size: 2.8vw;
-    }
-    .banner-content-box-2 p {
-        font-size: 1.23vw;
-    }
-    .banner-content-box-2 {
-        font-size: 1.23vw;
-    }
-    .cus-col {
-        width: 50%;
-        max-width: 50%;
-        min-width: 50%;
-    }
+@media screen and (max-width: 1300px) {
+  .banner-content-box-2 h4 {
+    font-size: 2.2vw;
+  }
+  .banner-content-box-2 span {
+    font-size: 2.7vw;
+  }
+  .banner-content-box-2 p {
+    font-size: 1.4vw;
+  }
+  .banner-content-box-2 {
+    font-size: 1.4vw;
+  }
+  .banner-content {
+    padding: 10px 10px;
+  }
+  .banner-content-box-1 {
+    border: 3px solid #ac0000;
+    padding: 0 10px;
+  }
+  .banner-image-text {
+    font-size: 3.07vw !important;
+  }
 }
 
 @media screen and (max-width: 849px) {
+  .banner-content-box-2 p {
+    font-size: 1.8vw;
+  }
+  .banner-content-box-2 {
+    font-size: 1.8vw;
+  }
   .will-home-divider {
     width: 275px;
     height: 6px;
     margin-top: 13px;
     border-radius: 2px;
   }
-  .banner-content-box-2 h4 {
-    font-size: 3.53vw;
-  }
-
-  .banner-content-box-2 span {
-    font-size: 4.35vw;
-  }
-
-  .banner-content-box-2 p {
-    font-size: 1.8vw;
-  }
-
-  .banner-content-box-2 h5 {
-    font-size: 1.8vw;
-  }
 
   .banner-height {
-    height: 54vw!important;
+    height: 54vw !important;
   }
-  .banner-image, .banner-image .banner-bg, .banner-content {
-    border-radius: 20px;
+
+  .custom-banner-2 .banner-r {
+    transform: translate(-27px, 50px);
   }
 }
 
@@ -187,23 +194,52 @@
   }
 
   .banner-height {
-    height: 54vh!important;
+    height: 48vh !important;
   }
 
   .banner-image-text {
-    font-size: 28px!important;
+    font-size: 5.1vw !important;
+  }
+
+  .banner-content-box-1 {
+    padding: 0 15px;
   }
 
   .banner-content-box-2 h4 {
-    font-size: 23px;
+    font-size: 20px;
   }
 
   .banner-content-box-2 span {
-    font-size: 28px;
+    font-size: 24px;
   }
 
-  .banner-content-box-2 p, .banner-content-box-2 h5 {
-    font-size: 14px;
+  .banner-content-box-2 p,
+  .banner-content-box-2 h5 {
+    font-size: 12px;
+  }
+  .banner-image,
+  .banner-image .banner-bg  {
+    border-radius: 20px 20px 0 0;
   }
 
+  .banner-content {
+    border-radius: 0 0 20px 20px;
+    padding: 15px;
+  }
+
+  .custom-banner-2 .banner-content {
+    border-radius: 20px 20px 0 0;
+    margin-top: 49px!important;
+    box-shadow: unset;
+  }
+
+  .custom-banner-2 .banner-image, .custom-banner-2 .banner-image .banner-bg {
+    border-radius: 0 0 20px 20px;
+  }
+
+  
+
+  .custom-banner-2 .banner-r {
+    transform: translate(0, 0);
+  }
 }
