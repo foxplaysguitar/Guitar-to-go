@@ -13,6 +13,10 @@
   background-color: #26201d !important;
 }
 
+.footer-1 li.menu-item {
+  font-size: 13px;
+}
+
 .footer-1 .row > div {
   max-width: 20%;
 }
@@ -25,9 +29,13 @@
 }
 
 #footer-bottom .right-reserved {
-  color: #444 !important;
+  color: #777 !important;
   text-align: right;
   font-size: 12px;
+}
+
+#footer-bottom .social-icons i {
+  font-size: 20px;
 }
 
 .flex-m {
