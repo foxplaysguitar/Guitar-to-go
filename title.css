@@ -1,246 +1,411 @@
+/* Will Start */
+
 .will-home-title {
-    background-color: #eae1d3;
-    position: relative;
-    z-index: 1;
-    display: inline;
-    padding-right: 30px;
-    font-weight: 500;
-    letter-spacing: 2.5px;
+  background-color: #eae1d3;
+  position: relative;
+  z-index: 1;
+  display: inline;
+  padding-right: 30px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+
+.line-deco {
+  background-color: #000;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 10%;
+}
+
+.will-home-divider {
+  background-color: rgb(162, 0, 21);
+  width: 375px;
+  height: 8px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.custom-banner-1 {
+  justify-content: center;
+}
+
+.banner-height {
+  max-height: 500px !important;
+  height: 39vw !important;
+}
+
+.banner-image {
+  border-radius: 20px 0 0 20px;
+}
+
+.banner-image .banner-bg {
+  border-radius: 20px 0 0 20px;
+}
+
+.banner-image-text {
+  text-align: right;
+  font-size: 40px !important;
+  letter-spacing: 3.5px;
+  line-height: 1.15 !important;
+  font-weight: 401 !important;
+  color: #ebe5bf !important;
+}
+
+.banner-content {
+  width: 100%;
+  background-color: #ebdec0;
+  border-radius: 0 20px 20px 0;
+  padding: 30px 25px;
+}
+
+.banner-content-box-1 {
+  border: 6px solid #ac0000;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.banner-content-box-2 {
+  text-align: left;
+}
+
+.banner-content-box-2 h4 {
+  color: #ac0000;
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.banner-content-box-2 span {
+  font-size: 37px;
+  font-weight: 700;
+}
+
+.banner-content-box-2 p {
+  color: #ac0000;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+}
+
+.banner-content-box-2 h5 {
+  color: #ac0000;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.custom-banner-2 .banner-content-box-1 {
+  border: 6px solid #0071a7;
+}
+
+.custom-banner-2 .banner-content-box-1 * {
+  color: #0071a7 !important;
+}
+
+.custom-banner-2 .banner-content {
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-banner-2 .banner-image, .custom-banner-2 .banner-image .banner-bg {
+  border-radius: 20px;
+}
+
+.custom-banner-2 .banner-l {
+  position: relative;
+  z-index: 1
+}
+
+.custom-banner-2 .banner-r {
+  transform: translate(-30px, 80px);
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 1301px) {
+  .custom-banner-2 .banner-content-box-2 h5 {
+  font-size: 19px;
+  } 
+}
+
+/* 特別為Banner設置的 */
+@media screen and (max-width: 1300px) {
+  .banner-content-box-2 h4 {
+    font-size: 2vw;
   }
-  
-  .line-deco {
-    background-color: #000;
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    bottom: 10%;
+  .banner-content-box-2 span {
+    font-size: 2.4vw;
   }
-  
-  .will-home-divider {
-    background-color: rgb(162, 0, 21);
-    width: 375px;
-    height: 8px;
-    margin-top: 20px;
-    border-radius: 5px;
+  .banner-content-box-2 p {
+    font-size: 1.2vw;
   }
-  
-  .custom-banner-1 {
-    justify-content: center;
+  .banner-content-box-2 h5{
+    font-size: 1.4vw;
   }
-  
-  .banner-height {
-    max-height: 500px !important;
-    height: 39vw !important;
-  }
-  
-  .banner-image {
-    border-radius: 20px 0 0 20px;
-  }
-  
-  .banner-image .banner-bg {
-    border-radius: 20px 0 0 20px;
-  }
-  
-  .banner-image-text {
-    text-align: right;
-    font-size: 40px !important;
-    letter-spacing: 3.5px;
-    line-height: 1.15 !important;
-    font-weight: 401 !important;
-    color: #ebe5bf !important;
-  }
-  
   .banner-content {
-    width: 100%;
-    background-color: #ebdec0;
-    border-radius: 0 20px 20px 0;
     padding: 30px 25px;
   }
-  
   .banner-content-box-1 {
     border: 6px solid #ac0000;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px;
+    padding: 0 20px;
   }
-  
-  .banner-content-box-2 {
-    text-align: left;
+  .banner-image-text {
+    font-size: 3.07vw !important;
   }
-  
-  .banner-content-box-2 h4 {
-    color: #ac0000;
-    font-size: 30px;
-    line-height: 1.4;
-    font-weight: 500;
-  }
-  
-  .banner-content-box-2 span {
-    font-size: 37px;
-    font-weight: 700;
-  }
-  
+}
+
+@media screen and (max-width: 849px) {
   .banner-content-box-2 p {
-    color: #ac0000;
-    font-weight: 400;
-    letter-spacing: 1.4px;
+    font-size: 1.8vw;
   }
-  
+  .banner-content-box-2 {
+    font-size: 1.8vw;
+  }
+  .will-home-divider {
+    width: 275px;
+    height: 6px;
+    margin-top: 13px;
+    border-radius: 2px;
+  }
+
+  .banner-height {
+    height: 54vw !important;
+  }
+
+  .custom-banner-2 .banner-r {
+    transform: translate(-27px, 50px);
+  }
+  .custom-banner-2 .banner-content-box-2 h5 {
+    font-size: 1.9vw;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .will-home-divider {
+    width: 200px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 0px;
+  }
+
+  .banner-height {
+    height: 48vh !important;
+  }
+
+  .banner-image-text {
+    font-size: 5.1vw !important;
+  }
+
+  .banner-content-box-1 {
+    padding: 0 15px;
+  }
+
+  .banner-content-box-2 h4 {
+    font-size: 20px;
+  }
+
+  .banner-content-box-2 span {
+    font-size: 24px;
+  }
+
+  .banner-content-box-2 p,
   .banner-content-box-2 h5 {
-    color: #ac0000;
-    font-weight: 700;
-    letter-spacing: 1.4px;
+    font-size: 12px;
   }
-  
-  .custom-banner-2 .banner-content-box-1 {
-    border: 6px solid #0071a7;
+  .banner-image,
+  .banner-image .banner-bg  {
+    border-radius: 20px 20px 0 0;
   }
-  
-  .custom-banner-2 .banner-content-box-1 * {
-    color: #0071a7 !important;
+
+  .banner-content {
+    border-radius: 0 0 20px 20px;
+    padding: 15px;
   }
-  
+
+  .custom-banner-2 .banner-content {
+    border-radius: 20px 20px 0 0;
+    margin-top: 49px!important;
+    box-shadow: unset;
+  }
+
+  .custom-banner-2 .banner-image, .custom-banner-2 .banner-image .banner-bg {
+    border-radius: 0 0 20px 20px;
+  }
+
   .custom-banner-2 .banner-content-box-2 h5 {
     font-size: 19px;
   }
-  
-  .custom-banner-2 .banner-content {
-    border-radius: 20px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .custom-banner-2 .banner-image, .custom-banner-2 .banner-image .banner-bg {
-    border-radius: 20px;
-  }
-  
-  .custom-banner-2 .banner-l {
-    position: relative;
-    z-index: 1
-  }
-  
+
   .custom-banner-2 .banner-r {
-    transform: translate(-30px, 80px);
+    transform: translate(0, 0);
   }
-  
-  .no-padding {
-    padding: 0 !important;
-  }
-  
-  .no-margin {
-    margin: 0 !important;
-  }
-  
-  /* 特別為Banner設置的 */
-  @media screen and (max-width: 1300px) {
-    .banner-content-box-2 h4 {
-      font-size: 2.2vw;
-    }
-    .banner-content-box-2 span {
-      font-size: 2.7vw;
-    }
-    .banner-content-box-2 p {
-      font-size: 1.4vw;
-    }
-    .banner-content-box-2 {
-      font-size: 1.4vw;
-    }
-    .banner-content {
-      padding: 30px 25px;
-    }
-    .banner-content-box-1 {
-      border: 6px solid #ac0000;
-      padding: 0 40px;
-    }
-    .banner-image-text {
-      font-size: 3.07vw !important;
-    }
-  }
-  
-  @media screen and (max-width: 849px) {
-    .banner-content-box-2 p {
-      font-size: 1.8vw;
-    }
-    .banner-content-box-2 {
-      font-size: 1.8vw;
-    }
-    .will-home-divider {
-      width: 275px;
-      height: 6px;
-      margin-top: 13px;
-      border-radius: 2px;
-    }
-  
-    .banner-height {
-      height: 54vw !important;
-    }
-  
-    .custom-banner-2 .banner-r {
-      transform: translate(-27px, 50px);
-    }
-  }
-  
-  @media screen and (max-width: 549px) {
-    .will-home-divider {
-      width: 200px;
-      height: 4px;
-      margin-top: 10px;
-      border-radius: 0px;
-    }
-  
-    .banner-height {
-      height: 48vh !important;
-    }
-  
-    .banner-image-text {
-      font-size: 5.1vw !important;
-    }
-  
-    .banner-content-box-1 {
-      padding: 0 15px;
-    }
-  
-    .banner-content-box-2 h4 {
-      font-size: 20px;
-    }
-  
-    .banner-content-box-2 span {
-      font-size: 24px;
-    }
-  
-    .banner-content-box-2 p,
-    .banner-content-box-2 h5 {
-      font-size: 12px;
-    }
-    .banner-image,
-    .banner-image .banner-bg  {
-      border-radius: 20px 20px 0 0;
-    }
-  
-    .banner-content {
-      border-radius: 0 0 20px 20px;
-      padding: 15px;
-    }
-  
-    .custom-banner-2 .banner-content {
-      border-radius: 20px 20px 0 0;
-      margin-top: 49px!important;
-      box-shadow: unset;
-    }
-  
-    .custom-banner-2 .banner-image, .custom-banner-2 .banner-image .banner-bg {
-      border-radius: 0 0 20px 20px;
-    }
-  
-    
-  
-    .custom-banner-2 .banner-r {
-      transform: translate(0, 0);
-    }
-  }
-  
+}
+
+
+
+
+
+/* Will End */
+
+.popular-bg {
+ background-image: url(https://guitartogo-music.com/wp-content/uploads/index-popular-back.webp);
+ background-repeat: no-repeat;
+  background-position:
+    left;
+background-size: 13%;
+height: 550px;
+}
+
+.icon-button {
+color:rgb(155,0,0) !important;
+}
+
+.bg-rb {
+background: linear-gradient(#9b0000 50%, #ddcdb6 70%) !important;
+}
+
+.text-border {
+margin: 10px 0;
+border-bottom: 2px solid rgb(219, 203, 180);
+border-top: 2px solid rgb(219, 203, 180);
+line-height: 1px !important;
+width:85%;
+}
+
+.text-border-mobile {
+margin: 10px 0;
+border-bottom: 1px solid rgb(219, 203, 180);
+border-top: 1px solid rgb(219, 203, 180);
+line-height: 1px !important;
+width:85%;
+}
+
+.menu-button {
+width: 80%;
+color: rgb(235,226,212)!important;
+  background-color:rgb(155,0,0) !important;
+}
+
+.button-title {
+line-height: 0em;
+color: rgb(226, 170, 130)!important;
+letter-spacing: 0.2em;
+}
+
+.menu-button:hover {
+color: white!important;
+background-color:#2A5931 !important;
+}
+.margin-10 {
+padding-left: 10% !important;
+}
+.img-s img {
+max-width: 20% !important;
+}
+.img-m img {
+max-width: 60% !important;
+}
+.brow blockquote {
+border-left: 5px solid #e9e0c1;
+color: #e9e0c1;
+font-size: 1.2em;
+font-style: italic;
+margin: 0 0 1.25em;
+padding: 0 1.25em 0 1.875em;
+position: relative;
+}
+.bg-wg {
+background: linear-gradient(white 30%, #184621 30%) !important;
+}
+.bg-radius {
+border-radius: 80px;
+}
+
+.eng {
+font-family: Roko !important;
+}
+.700 {
+font-weight:700 !important;
+}
+.circular-image {
+width: 1000px;
+height: 500px;
+margin: 50px 0;
+overflow: hidden;
+border-radius: 30px;
+transform: skew(-15deg, 0deg);
+}
+.circular-image img {
+max-width: 120%;
+margin-left: -70px;
+display: block;
+transform: skew(15deg, 0deg);
+}
+
+.img-radius {
+margin: 10px 0;
+overflow: hidden;
+border-radius: 30px;
+}
+
+@media only screen and (max-width: 849px) {
+.circular-image {
+width: 600px;
+height: 300px;
+margin: 25px 0 !important;
+}
+
+.radius-bottom-left {
+border-bottom-left-radius: 40px;
+    height: 40px;
+    padding-top: 6px;
+}
+.bg-radius {
+border-radius: 50px;
+}
+
+.img-radius {
+border-radius: 10px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.circular-image {
+    width: 350px;
+    height: 200px;
+    margin-left: 5% !important;
+}
+
+.img-radius {
+margin: -20px 0;
+overflow: hidden;
+border-radius: 7px;
+}
+
+.popular-bg {
+background-size: 30%;
+height: 600px;
+}
+
+.button-title {
+letter-spacing: 0em;
+}
+
+}
+
+.circular-image img {
+max-width: 140%;
+margin-left: -70px;
+}
