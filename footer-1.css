@@ -1,6 +1,9 @@
-	.footer-1 {
-		padding: 20px;
-	}
-	.footer-1 .footer-logo {
-		width: 175px;
-	}
+.footer-1 {
+	padding: 20px;
+}
+.footer-1 .footer-logo {
+	width: 175px;
+}
+.footer-1 .widget_custom_html {
+margin-bottom: 0;
+}	
