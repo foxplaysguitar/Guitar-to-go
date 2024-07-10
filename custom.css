@@ -1,0 +1,82 @@
+/* Desktop */
+
+.title-content .title-breadcrumbs .woocommerce-breadcrumb {
+    font-size: 0.8em !important;
+}
+
+#top-link {
+display: none;}
+
+.page-title-inner {
+height: 35px;
+min-height:35px!important;
+    justify-content: center !important;
+    max-width: 1300px !important;
+    flex-flow: column !important;
+    align-items: flex-end !important;
+}
+
+.page-title-inner .title-content {
+padding-right: 10px!important;
+margin-right: 0!important;
+text-align: right!important;
+}
+
+.page-title-inner .pt-half, .page-title-inner .pb-half {
+padding: 0!important;
+}
+.grecaptcha-badge {
+    display: none !important;
+}
+
+.container-width, .full-width .ubermenu-nav, .container, .row {
+    max-width: 1300px;
+}
+
+.page-title-inner {
+    padding-top: 0px;
+}
+
+.col-inner {
+    margin: 0px 0px 0px 0px;
+}
+
+#pay_forma, #pp--pay-form {
+display:none !important;
+}
+
+button.api_add_to_compare {
+display:none ;
+}
+
+.wc_payment_methods {
+display: block !important;
+}
+
+ul li.woocommerce-MyAccount-navigation-link {
+display: none !important;
+}
+
+.ACguitar {
+    width: 800px;
+    height: 2200px;
+    background-image: url(https://guitartogo-music.com/wp-content/uploads/guitar-display-full-scaled.jpeg);
+    color: white !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: -250px;
+}
+
+/* Tablet and down */
+
+.ACguitar {
+    width: 1700px;
+    height: 4350px;
+    margin-left: -795px;
+}
+
+/* Mobile */
+
+.nav-vertical li li {
+   padding-right: 20px !important;
+}
