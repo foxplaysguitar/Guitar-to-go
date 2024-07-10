@@ -1,4 +1,4 @@
-/* Desktop */
+/* All */
 
 .title-content .title-breadcrumbs .woocommerce-breadcrumb {
     font-size: 0.8em !important;
@@ -65,6 +65,14 @@ display: none !important;
     background-repeat: no-repeat;
     background-size: 100%;
     margin-left: -250px;
+}
+
+@media screen and (max-width: 1300px){
+.page-title-inner .title-content {
+padding-right: 10px!important;
+margin-right: auto!important;
+text-align: center!important;
+}
 }
 
 /* Tablet and down */
