@@ -1,3 +1,5 @@
+/* 排版類 */
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -6,12 +8,8 @@
 
 .flex-right {
     display: flex;
-    justify-content: flex-end ;
+    justify-content: flex-end;
     align-items: flex-end;
-}
-
-.effect img {
-    border-radius: 10px;
 }
 
 .m-lr-0 {
@@ -19,21 +17,18 @@
     margin-right: 0 !important;
 }
 
-.normal-text {
-    font-size: 1.28vw
-}
-
 .relative {
     position: relative;
 }
 
-.video-center-text {
-    font-size: 2vw
+/* 文字類 */
+
+.normal-text {
+    font-size: 1.28vw
 }
 
-.light-box-btn {
-    position: absolute;
-    top: 110%;
+.video-center-text {
+    font-size: 2vw
 }
 
 .feature h3 {
@@ -42,24 +37,12 @@
     color: #000;
 }
 
-.feature video {
-    border-radius: 20px;
-    height: 34vh;
-    box-shadow: 2px 5px 10px
-}
-
 .feature h4 {
     font-size: 1.2vw;
     text-align: center;
     margin-top: 10px;
     font-weight: 600;
     color: #666666
-}
-
-.lava-drum {
-    width: 100%;
-    border-radius: 30px;
-    height: 11vw
 }
 
 .drum-title {
@@ -72,6 +55,29 @@
 
 .five-pattern h4 {
     font-size: 1.3vw;
+}
+
+/* 元件樣式類 */
+
+.effect img {
+    border-radius: 10px;
+}
+
+.light-box-btn {
+    position: absolute;
+    top: 110%;
+}
+
+.feature video {
+    border-radius: 20px;
+    height: 34vh;
+    box-shadow: 2px 5px 10px
+}
+
+.lava-drum {
+    width: 100%;
+    border-radius: 30px;
+    height: 11vw
 }
 
 .lava-me-logo {
@@ -87,13 +93,8 @@
 }
 
 @media screen and (max-width: 575px) {
-    .normal-text {
-        font-size: 1rem
-    }
 
-    .feature h3 {
-        font-size: 1.5rem
-    }
+    /* 排版類 */
 
     .sm-m-lr-0 {
         margin-left: 0 !important;
@@ -121,13 +122,28 @@
         padding-right: 0 !important;
     }
 
-    .feature video {
-        height: 180px
+
+    /* 文字類 */
+
+    .normal-text {
+        font-size: 1rem
+    }
+
+    .feature h3 {
+        font-size: 1.5rem
     }
 
     .title-2 {
         font-size: 1.5rem !important;
     }
+
+
+    /* 元件樣式類 */
+
+    .feature video {
+        height: 180px
+    }
+
 
     .lava-drum {
         border-radius: 10px;
@@ -140,6 +156,16 @@
 }
 
 @media screen and (max-width: 991px) and (min-width: 576px) {
+
+    /* 排版類 */
+
+    .mid-20 {
+        max-width: 20%;
+        min-width: 20%;
+    }
+
+    /* 文字類 */
+
     .feature h3 {
         font-size: 2.5vw
     }
@@ -156,11 +182,6 @@
         font-size: 2vw;
     }
 
-    .mid-20 {
-        max-width: 20%;
-        min-width: 20%;
-    }
-
     .five-pattern h4 {
         font-size: 2.5vw
     }
@@ -170,14 +191,25 @@
         margin-bottom: 30px;
     }
 
+    /* 元件樣式類 */
+
     .lava-me-logo {
         width: 80px;
     }
 }
 
 @media screen and (min-width: 992px) {
+
+    /* 排版類 */
+
     .big-20 {
         max-width: 20%;
         min-width: 20%;
     }
+
+    /* 文字類 */
+
+    /* 元件樣式類 */
+
+
 }
