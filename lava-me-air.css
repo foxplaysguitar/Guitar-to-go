@@ -6,7 +6,8 @@
 
 .flex-right {
     display: flex;
-    justify-content: flex-end align-items: flex-end;
+    justify-content: flex-end ;
+    align-items: flex-end;
 }
 
 .effect img {
