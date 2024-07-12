@@ -1,0 +1,182 @@
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.flex-right {
+    display: flex;
+    justify-content: flex-end align-items: flex-end;
+}
+
+.effect img {
+    border-radius: 10px;
+}
+
+.m-lr-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.normal-text {
+    font-size: 1.28vw
+}
+
+.relative {
+    position: relative;
+}
+
+.video-center-text {
+    font-size: 2vw
+}
+
+.light-box-btn {
+    position: absolute;
+    top: 110%;
+}
+
+.feature h3 {
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #000;
+}
+
+.feature video {
+    border-radius: 20px;
+    height: 34vh;
+    box-shadow: 2px 5px 10px
+}
+
+.feature h4 {
+    font-size: 1.2vw;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #666666
+}
+
+.lava-drum {
+    width: 100%;
+    border-radius: 30px;
+    height: 11vw
+}
+
+.drum-title {
+    text-align: center;
+    font-size: 1.3vw;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #666
+}
+
+.five-pattern h4 {
+    font-size: 1.3vw;
+}
+
+.lava-me-logo {
+    width: 170px;
+}
+
+.maru {
+    border-radius: 20px
+}
+
+.shadow {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25)
+}
+
+@media screen and (max-width: 575px) {
+    .normal-text {
+        font-size: 1rem
+    }
+
+    .feature h3 {
+        font-size: 1.5rem
+    }
+
+    .sm-m-lr-0 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .sm-m-l-0 {
+        margin-left: 0 !important;
+    }
+
+    .sm-m-r-0 {
+        margin-right: 0 !important;
+    }
+
+    .sm-p-lr-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .sm-p-l-0 {
+        padding-left: 0 !important;
+    }
+
+    .sm-p-r-0 {
+        padding-right: 0 !important;
+    }
+
+    .feature video {
+        height: 180px
+    }
+
+    .title-2 {
+        font-size: 1.5rem !important;
+    }
+
+    .lava-drum {
+        border-radius: 10px;
+        margin-top: 7px
+    }
+
+    .lava-me-logo {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 576px) {
+    .feature h3 {
+        font-size: 2.5vw
+    }
+
+    .feature h4 {
+        font-size: 2vw
+    }
+
+    .video-center-text {
+        font-size: 3vw;
+    }
+
+    .normal-text {
+        font-size: 2vw;
+    }
+
+    .mid-20 {
+        max-width: 20%;
+        min-width: 20%;
+    }
+
+    .five-pattern h4 {
+        font-size: 2.5vw
+    }
+
+    .drum-title {
+        font-size: 2vw;
+        margin-bottom: 30px;
+    }
+
+    .lava-me-logo {
+        width: 80px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .big-20 {
+        max-width: 20%;
+        min-width: 20%;
+    }
+}
