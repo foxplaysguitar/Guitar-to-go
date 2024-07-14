@@ -1,0 +1,338 @@
+:root {
+    --lava-black: #000;
+    --lava-white: #ECECEC;
+    --lava-silver: #E6E6E6;
+    --lava-grey: #666666;
+    --big-title-size-1 : 96px;
+    --big-title-size-2 : 88px;
+    --big-sub-title-size-1 : 48px;
+    --big-sub-title-size-2 : 40px;
+    --sm-title-size-1 : 36px;
+    --desc-size-1 : 28px;
+    --desc-size-2 : 24px;
+    --desc-size-3 : 20px;
+    --m-big-title-size-1 : 48px;
+    --m-big-title-size-2 : 32px;
+    --m-big-sub-title-size-1 : 20px;
+    --m-big-sub-title-size-2 : 20px;
+    --m-sm-title-size-1 : 18px;
+    --m-desc-1 : 16px;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 10px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.m-lr-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.effect img {
+    border-radius: 10px;
+}
+
+.light-box-btn {
+    position: absolute;
+    top: 110%;
+}
+
+.feature video {
+    border-radius: 20px;
+    height: 34vh;
+    box-shadow: 2px 5px 10px
+}
+
+.lava-drum {
+    width: 100%;
+    border-radius: 30px;
+    height: 11vw
+}
+
+.lava-me-logo {
+    width: 170px;
+}
+
+.shadow {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25)
+}
+
+@media screen and (max-width: 575px) {
+
+    /* 排版類 */
+
+    .sm-m-lr-0 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .sm-m-l-0 {
+        margin-left: 0 !important;
+    }
+
+    .sm-m-r-0 {
+        margin-right: 0 !important;
+    }
+
+    .sm-p-lr-0 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .sm-p-l-0 {
+        padding-left: 0 !important;
+    }
+
+    .sm-p-r-0 {
+        padding-right: 0 !important;
+    }
+
+
+    /* 文字類 */
+
+    .normal-text {
+        font-size: 1rem
+    }
+
+    .feature h3 {
+        font-size: 1.5rem
+    }
+
+    .title-2 {
+        font-size: 1.5rem !important;
+    }
+
+
+    /* 元件樣式類 */
+
+    .feature video {
+        height: 180px
+    }
+
+
+    .lava-drum {
+        border-radius: 10px;
+        margin-top: 7px
+    }
+
+    .lava-me-logo {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 576px) {
+
+    /* 排版類 */
+
+    .mid-20 {
+        max-width: 20%;
+        min-width: 20%;
+    }
+
+    /* 文字類 */
+
+    .feature h3 {
+        font-size: 2.5vw
+    }
+
+    .feature h4 {
+        font-size: 2vw
+    }
+
+    .video-center-text {
+        font-size: 3vw;
+    }
+
+    .normal-text {
+        font-size: 2vw;
+    }
+
+    .five-pattern h4 {
+        font-size: 2.5vw
+    }
+
+    .drum-title {
+        font-size: 2vw;
+        margin-bottom: 30px;
+    }
+
+    /* 元件樣式類 */
+
+    .lava-me-logo {
+        width: 80px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    /* 排版類 */
+
+    .big-20 {
+        max-width: 20%;
+        min-width: 20%;
+    }
+
+    /* 文字類 */
+
+    /* 元件樣式類 */
+
+
+}
+
+/* Section 0 */
+
+#main {
+    background-color: var(--lava-black);
+}
+
+/* Section 1 */
+
+.section-1 {
+    
+    text-align: center;
+
+    .title {
+        font-size: var(--big-title-size-1);
+        color: var(--lava-black);
+    }
+
+    .sub-title {
+        font-size: var(--big-sub-title-size-1);
+        color:var(--lava-grey);
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+    }
+
+    @media screen and (max-width: 575px) {
+
+        .title {
+            font-size: var(--m-big-title-size-1);
+        }
+
+        .sub-title {
+            font-size: var(--m-big-sub-title-size-1);
+        }
+    }
+
+}
+
+/* Section 1 */
+
+.section-1 {
+    
+    text-align: center;
+
+    .title {
+        font-size: var(--big-title-size-1);
+        color: var(--lava-black);
+    }
+
+    .sub-title {
+        font-size: var(--big-sub-title-size-1);
+        color:var(--lava-grey);
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+    }
+
+    @media screen and (max-width: 575px) {
+
+        .title {
+            font-size: var(--m-big-title-size-1);
+        }
+
+        .sub-title {
+            font-size: var(--m-big-sub-title-size-1);
+        }
+    }
+
+}
+
+/* Section-2 */
+
+.section-2 {
+
+    padding: 0!important;
+
+    .video-box {
+        width: 100%;
+        height: 56.25vw;
+        max-height: 732px;
+        position: relative;
+
+        @media screen and (max-width: 575px) {
+
+            height: 176vw;
+
+            button {
+                font-size: var(--m-desc-1);
+                padding: 2px 30px;
+            }          
+        }
+
+        video {
+            width: 100%;
+        }
+
+        .button-box {
+            display: flex;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            width: 400px;
+            max-width: 90%;
+            justify-content: space-around;
+            transform: translateX(-50%);
+    
+            button {
+                text-align: center;
+                border-radius: 38px;
+                padding: 5px 30px;
+                font-size: var(--desc-size-3);
+
+            }
+    
+            .full-vid {
+                border: 2px solid #79AEFF;
+                color: #79AEFF;
+                box-shadow: 0 0 8px #79AEFF;
+
+                &:hover {
+                    background-color: #79AEFF;
+                    color: #fff;
+                }
+            }
+        
+            .quick-intro {
+                border: 2px solid #BC6AFF;
+                color: #BC6AFF;
+                box-shadow: 0 0 8px #BC6AFF;
+
+                &:hover {
+                    background-color: #BC6AFF;
+                    color: #fff;
+                }
+            }
+    
+        }
+    }
+}
