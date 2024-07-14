@@ -1,3 +1,60 @@
+:root {
+    --lava-black: #000;
+}
+
+.big-title-1 {
+    font-size: 96px;
+}
+
+.big-sub-title-1 {
+    font-size: 48px;
+}
+
+.big-title-2 {
+    font-size: 88px;
+}
+
+.big-sub-title-2 {
+    font-size: 40px;
+}
+
+.sm-title-1 {
+    font-size: 36px;
+}
+
+.text-desc-1 {
+    font-size: 28px;
+}
+
+.text-desc-2 {
+    font-size: 24px;
+}
+
+.text-desc-3 {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 575px) {
+    .m-big-title-1 {
+        font-size: 48px;
+    }
+    .m-big-sub-title-1 {
+        font-size: 20px;
+    }
+    .m-big-title-2 {
+        font-size: 32px;
+    }
+    .m-big-sub-title-2 {
+        font-size: 20px;
+    }
+    .m-sm-title-1 {
+        font-size: 18px;
+    }
+    .m-text-desc-1 {
+        font-size: 16px;
+    }
+}
+
 /* 排版類 */
 
 .flex-center {
@@ -22,6 +79,8 @@
 }
 
 /* 文字類 */
+
+
 
 .normal-text {
     font-size: 1.28vw
@@ -58,6 +117,10 @@
 }
 
 /* 元件樣式類 */
+
+#main {
+    background-color: var(--lava-black);
+}
 
 .effect img {
     border-radius: 10px;
