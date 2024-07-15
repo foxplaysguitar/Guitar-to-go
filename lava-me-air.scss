@@ -23,6 +23,22 @@ h1, h2, h3, h4, h5, p {
     margin-bottom: 10px!important;
 }
 
+.text-black {
+    color: var(--lava-black)
+}
+
+.text-white {
+    color: var(--lava-white)
+}
+
+.text-silver {
+    color: var(--lava-silver)
+}
+
+.text-grey {
+    color: var(--lava-grey)
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -42,6 +58,10 @@ h1, h2, h3, h4, h5, p {
 
 .relative {
     position: relative;
+}
+
+.img-round {
+    border-radius: 30px;
 }
 
 .effect img {
@@ -374,5 +394,33 @@ h1, h2, h3, h4, h5, p {
         }
         
     }
+
+}
+
+.section-4 {
+
+    padding: 0;
+
+    .desc {
+        font-size: var(--desc-size-1);
+        font-weight: 600;
+
+
+    }
+
+    @media screen and (max-width: 575px) {
+
+        .desc {
+            font-size: var(--m-desc-1);
+            padding-bottom: 50px;
+            text-align: center;
+        }
+        
+        img {
+            border-radius: 30px;
+        }
+    }
+
+
 
 }
