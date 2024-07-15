@@ -102,29 +102,29 @@ h1, h2, h3, h4, h5, p {
 
     /* 排版類 */
 
-    .sm-m-lr-0 {
+    .m-m-lr-0 {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 
-    .sm-m-l-0 {
+    .m-m-l-0 {
         margin-left: 0 !important;
     }
 
-    .sm-m-r-0 {
+    .m-m-r-0 {
         margin-right: 0 !important;
     }
 
-    .sm-p-lr-0 {
+    .m-p-lr-0 {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
 
-    .sm-p-l-0 {
+    .m-p-l-0 {
         padding-left: 0 !important;
     }
 
-    .sm-p-r-0 {
+    .m-p-r-0 {
         padding-right: 0 !important;
     }
 
@@ -483,8 +483,35 @@ h1, h2, h3, h4, h5, p {
         color: var(--lava-white);
     }
 
+    .sub-title {
+        font-size: var(--desc-size-3);
+        border-bottom: 1px solid rgba(0,0,0,0);
+        transition: border-bottom-color 0.5s linear;
+
+        &.active {
+            border-bottom-color: var(--lava-silver);
+        }
+    }
+
     img {
         border-radius: 30px;
+    }
+
+    .tab-box {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        div {
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+        color: var(--lava-grey);
     }
 
 }
