@@ -506,12 +506,20 @@ h1, h2, h3, h4, h5, p {
             margin-left: 5px;
             margin-right: 5px;
             cursor: pointer;
+            color: var(--lava-white);
         }
     }
 
     .desc {
         font-size: var(--desc-size-3);
-        color: var(--lava-grey);
+        color: var(--lava-silver);
     }
 
+    .grid-silver, .grid-dark {
+        display: none;
+
+        &.show {
+            display: flex;
+        }
+    }
 }
