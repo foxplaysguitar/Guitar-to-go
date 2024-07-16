@@ -41,6 +41,19 @@ h1, h2, h3, h4, h5, p {
     color: var(--lava-grey)!important;
 }
 
+.flex-row {
+    flex-direction: row;
+}
+  
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-v-center { 
+    display: flex;
+    align-items: center;;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -619,5 +632,112 @@ h1, h2, h3, h4, h5, p {
         .desc {
             font-size: var(--m-desc-1);
         }
+    }
+}
+
+.section-11 {
+
+    padding: 0!important;
+
+    .title {
+        font-size: var(--desc-size-1);
+        color: var(--lava-white);
+    }
+
+    .tab-box {
+
+        border-radius: 35px;
+        padding: 20px 24px;
+        display: flex;
+        justify-content: space-around;
+        width: 348px;
+        background-color: #080808;
+
+        div {
+            $x : 0;
+            $y : 0;
+            $blur : 8px;
+            $yl: #F4C043;
+            $rd: #FF3937;
+            $pp: #AF49FF;
+            $bl: #5995FF;
+            $gr: #77D660;
+
+            border-radius: 100%;
+            border-width: 6px;
+            border-style: solid;
+            opacity: 0.5;
+            transition: opacity 0.5s linear;
+            width: 30px;
+            height: 30px;
+
+            &.app-yellow {
+                border-color: $yl;
+                box-shadow: $x $y $blur $yl;
+            }
+
+            &.app-red {
+                border-color: $rd;
+                box-shadow: $x $y $blur $rd;
+            }
+
+            &.app-purple {
+                border-color: $pp;
+                box-shadow: $x $y $blur $pp;
+            }
+
+            &.app-blue {
+                border-color: $bl;
+                box-shadow: $x $y $blur $bl;
+            }
+
+            &.app-green {
+                border-color: $gr;
+                box-shadow: $x $y $blur $gr;
+            }
+        }
+    }
+
+    .app-box {
+
+        background-image: url('/wp-content/uploads/lava-me-air-section-11-phone-bg.webp');
+        width: 100%;
+        position: relative;
+        border-radius: 100px;
+
+        img {
+            border-radius: 30px;
+        }
+
+        .app-btn {
+            width: 80%;
+            position: absolute;
+            top: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            div {
+                border-radius: 30px;
+                position: relative;
+                margin-bottom: 10px;
+                cursor: pointer; 
+    
+                i {
+                    position: absolute;
+                    right: 5%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 10;
+                    color: var(--lava-white);
+                    font-size: 24px;
+                    opacity: 0.2;
+                }
+    
+            }
+    
+
+        }
+
+        
     }
 }
