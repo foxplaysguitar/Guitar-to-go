@@ -26,19 +26,19 @@ h1, h2, h3, h4, h5, p {
 }
 
 .text-black {
-    color: var(--lava-black)
+    color: var(--lava-black)!important;
 }
 
 .text-white {
-    color: var(--lava-white)
+    color: var(--lava-white)!important;
 }
 
 .text-silver {
-    color: var(--lava-silver)
+    color: var(--lava-silver)!important;
 }
 
 .text-grey {
-    color: var(--lava-grey)
+    color: var(--lava-grey)!important;
 }
 
 .flex-center {
@@ -585,5 +585,39 @@ h1, h2, h3, h4, h5, p {
 }
 
 .section-9 {
-    
+
+    padding: 0!important;
+
+    .desc {
+        font-size: var(--desc-size-3);
+
+        @media screen and (max-width: 575px){
+            font-size: var(--m-desc-1);
+        }
+    }
+}
+
+.section-10 {
+
+    padding: 0!important;
+
+    .title {
+        text-shadow: 0 0 var(--box-shadow-blur) var(--lava-silver);
+        font-size: var(--desc-size-1);
+        color: var(--lava-silver);
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+    }
+
+    @media screen and (max-width: 575px){
+        .title {
+            font-size: var(--m-sm-title-size-1)
+        }
+
+        .desc {
+            font-size: var(--m-desc-1);
+        }
+    }
 }
