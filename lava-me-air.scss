@@ -19,10 +19,17 @@
     --m-big-sub-title-size-2 : 20px;
     --m-sm-title-size-1 : 18px;
     --m-desc-1 : 16px;
+    --inset-shadow: inset 0 0 16px 13px var(--lava-black);
 }
 
 h1, h2, h3, h4, h5, p {
     margin-bottom: 10px!important;
+}
+
+.section {
+    .fill {
+        box-shadow: var(--inset-shadow);
+    }
 }
 
 .text-black {
@@ -246,6 +253,10 @@ h1, h2, h3, h4, h5, p {
 .section-1 {
     
     text-align: center;
+
+    .fill {
+        box-shadow: unset!important;
+    }
 
     .title {
         font-size: var(--big-title-size-1);
@@ -614,6 +625,10 @@ h1, h2, h3, h4, h5, p {
 
     padding: 0!important;
 
+    .fill {
+        box-shadow: unset;
+    }
+
     .title {
         text-shadow: 0 0 var(--box-shadow-blur) var(--lava-silver);
         font-size: var(--desc-size-1);
@@ -642,8 +657,11 @@ h1, h2, h3, h4, h5, p {
     .title {
         font-size: var(--desc-size-1);
         color: var(--lava-white);
-    }
 
+        @media screen and (max-width: 575px){
+            text-align: center;
+        }
+    }
     .tab-box {
 
         border-radius: 35px;
@@ -652,6 +670,15 @@ h1, h2, h3, h4, h5, p {
         justify-content: space-around;
         width: 348px;
         background-color: #080808;
+
+        @media screen and (max-width: 575px){
+            width: 100%;
+
+            div {
+                width: 20px;
+                height: 20px;
+            }
+        }
 
         div {
             $x : 0;
@@ -667,9 +694,14 @@ h1, h2, h3, h4, h5, p {
             border-width: 6px;
             border-style: solid;
             opacity: 0.5;
-            transition: opacity 0.5s linear;
+            transition: opacity 0.2s linear;
             width: 30px;
             height: 30px;
+            cursor: pointer;
+
+            &.selected {
+                opacity: 1;
+            }
 
             &.app-yellow {
                 border-color: $yl;
@@ -695,33 +727,34 @@ h1, h2, h3, h4, h5, p {
                 border-color: $gr;
                 box-shadow: $x $y $blur $gr;
             }
+
+
         }
     }
 
     .app-box {
-
         background-image: url('/wp-content/uploads/lava-me-air-section-11-phone-bg.webp');
         width: 100%;
         position: relative;
         border-radius: 100px;
-
         img {
             border-radius: 30px;
         }
-
         .app-btn {
             width: 80%;
             position: absolute;
             top: 16%;
             left: 50%;
             transform: translateX(-50%);
-
             div {
                 border-radius: 30px;
                 position: relative;
                 margin-bottom: 10px;
                 cursor: pointer; 
-    
+                transition: transform 0.2s linear;   
+                &.selected {
+                    transform: scale(1.2);
+                }
                 i {
                     position: absolute;
                     right: 5%;
@@ -732,12 +765,200 @@ h1, h2, h3, h4, h5, p {
                     font-size: 24px;
                     opacity: 0.2;
                 }
-    
             }
-    
+        }
+    }
+}
 
+.section-12 {
+    img {
+        border-radius: 30px;
+    }
+
+    .desc {
+        font-size: var(--desc-size-1);
+        font-weight: 600;
+    }
+
+    @media screen and (max-width: 575px){
+        .desc {
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+}
+
+.section-13 {
+    padding: 0!important;
+
+    .title {
+        text-shadow: 0 0 var(--box-shadow-blur) var(--lava-silver);
+        font-size: var(--desc-size-1);
+        color: var(--lava-silver);
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+    }
+
+    @media screen and (max-width: 575px){
+        .title {
+            font-size: var(--m-sm-title-size-1)
         }
 
-        
+        .desc {
+            font-size: var(--m-desc-1);
+        }
     }
+}
+
+.section-14 {
+    padding: 0!important;
+    height: 56.25vw;
+
+    @media screen and (max-width: 575px){
+        height: 400px;
+    }
+
+    .title {
+        font-size: var(--desc-size-1);
+        color: var(--lava-white);
+    }
+
+    .desc {
+        color: var(--lava-white);
+        font-size: var(--m-desc-1);
+    }
+
+    video {
+        width: 100%;
+        border-radius: 30px;
+    }
+}
+
+.section-15 {
+
+    box-shadow: var(--inset-shadow);
+    width: 100%;
+    height: 56.25vw;
+    position: relative;
+
+    .banner {
+        background-color: unset!important;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .text-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        text-shadow: 0 0 8px #000;
+
+        .title {
+            font-size: var(--big-title-size-2);
+            color: var(--lava-white);
+        }
+    
+        .sub-title {
+            font-size: var(--big-sub-title-size-2);
+            color: var(--lava-white);
+        }
+    
+        .desc {
+            font-size: var(--desc-size-2);
+            color: var(--lava-grey);
+        }
+
+    }
+
+
+
+    @media screen and (max-width: 575px){
+        .title {
+            font-size: var(--m-big-title-size-2);
+        }
+
+        .sub-title {
+            font-size: var(--m-big-sub-title-size-2);
+        }   
+
+        .desc {
+            font-size: var(--m-desc-1);
+        }
+    }
+}
+
+.section-16 {
+
+    width: 100%;
+    padding: 0;
+
+    .fill {
+        box-shadow: unset;
+    }
+
+    .title {
+        font-size: var(--sm-title-size-1);
+        color: var(--lava-white);
+    }
+
+    .sub-title {
+        font-size: var(--desc-size-2);
+        color: var(--lava-white);
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+        color: var(--lava-white);
+    }
+
+    .img-round {
+
+        .banner {
+            border-radius: 30px;
+        }
+
+    }
+
+    .img-box {
+        
+        transition: opacity 0.5s linear;
+        border-radius: 30px;
+
+        .banner-bg {
+            border-radius: 30px;
+        }
+
+        .active {
+            opacity: 0
+        }
+
+        .desc {
+            font-size: var(--desc-size-3);
+            color: var(--lava-white);
+            text-align: right;
+            text-shadow: 0 0 10px #000;
+        }
+
+    }
+
+    @media screen and (max-width: 575px) {
+        .title {
+            font-size: var(--m-big-title-size-1)
+        }
+
+        .sub-title {
+            font-size: var(--m-big-sub-title-size-1);
+        }
+
+        .desc {
+            font-size: var(--m-desc-1);
+        }
+    }
+
 }
