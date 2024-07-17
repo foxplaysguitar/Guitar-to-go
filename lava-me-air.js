@@ -45,3 +45,41 @@ function gridImgTrigger(color){
         }
     }
 }
+
+function playEffect(effectNum){
+    let tabSel = document.querySelectorAll('.section-11 .tab-box > div')[effectNum];
+    let appSel = document.querySelectorAll('.section-11 .app-btn > div')[effectNum];
+    let audioSel = document.querySelectorAll('.section-11 .app-btn audio')[effectNum];
+    
+    //點到正在播放的
+    if(tabSel.classList.contains('selected')){
+        tabSel.classList.remove('selected');
+        appSel.classList.remove('selected');
+        audioSel.classList.remove('selected');
+        audioSel.pause();
+        console.log('Selected Being Removed.')
+    }
+
+    //沒點到正在播放的
+    else {
+        //已有其他在播放
+        if(document.querySelector('.section-11 .selected')){
+            document.querySelector('.tab-box div.selected').classList.remove('selected');
+            document.querySelector('.app-btn div.selected').classList.remove('selected');
+            document.querySelector('.app-btn audio.selected').pause()
+            document.querySelector('.app-btn audio.selected').classList.remove('selected');
+        }
+        tabSel.classList.add('selected');
+        appSel.classList.add('selected');
+        audioSel.classList.add('selected');
+        audioSel.play()
+        console.log('Selected is changed.');
+    }
+}
+
+let tabSels = document.querySelectorAll('.section-11 .tab-box > div');
+let appSels = document.querySelectorAll('.section-11 .app-btn > div');
+for(var i=0; i<tabSels.length; i++){
+    tabSels[i].setAttribute('onclick', `playEffect(${i})`);
+    appSels[i].setAttribute('onclick', `playEffect(${i})`);
+}
