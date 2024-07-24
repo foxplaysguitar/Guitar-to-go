@@ -20,31 +20,23 @@ function videoLazyload() {
 
 videoLazyload();
 
-function gridImgTrigger(color){
-    console.log('Start Grid Trigger')
-    // let sec = document.querySelector('.section-6')
-    // let grids = sec.querySelectorAll('.grid-trigger img');
-    // document.querySelector('.tab-title.active').classList.remove('active');
-    // this.classList.add('active');
+/* 觸發銀黑外觀TAB */
 
-    gridSilver = document.querySelectorAll('.grid-silver');
-    gridDark = document.querySelectorAll('.grid-dark');
+function changeTab(){
+    let willTab = this.closest('.section').querySelectorAll('.will-tab li a');
+    let tabIndex = this.dataset.click;
+    willTab[tabIndex].click()
 
-    if(color == 'silver'){
-        for(var i=0; i<gridSilver.length; i++){
-            gridSilver[i].classList.remove('show');
-            gridSilver[i].classList.add('show');
-            gridDark[i].classList.remove('show')
-        }
-    }
-    else {
-        for(var i=0; i<gridSilver.length; i++){
-            gridDark[i].classList.remove('show');
-            gridDark[i].classList.add('show');
-            gridSilver[i].classList.remove('show')
-        }
-    }
+    this.closest('.tab-box').querySelector('.active').classList.remove('active');
+    this.classList.add('active');    
 }
+
+let tabTitle = document.querySelectorAll('.tab-box button');
+for(var i=0; i<tabTitle.length; i++){
+    tabTitle[i].addEventListener('click', changeTab)
+}
+
+/* 音訊試聽區域 */
 
 function playEffect(effectNum){
     let tabSel = document.querySelectorAll('.section-11 .tab-box > div')[effectNum];
