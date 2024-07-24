@@ -1,33 +1,39 @@
 :root {
     --lava-black: #000;
-    --lava-white: #ECECEC;
-    --lava-silver: #E6E6E6;
+    --lava-white: #ececec;
+    --lava-silver: #e6e6e6;
     --lava-grey: #666666;
-    --lava-blue: #92BEFC;
+    --lava-blue: #92befc;
     --box-shadow-blur: 8px;
-    --big-title-size-1 : 96px;
-    --big-title-size-2 : 88px;
-    --big-sub-title-size-1 : 48px;
-    --big-sub-title-size-2 : 40px;
-    --sm-title-size-1 : 36px;
-    --desc-size-1 : 28px;
-    --desc-size-2 : 24px;
-    --desc-size-3 : 20px;
-    --t-big-title-1:32px;
-    --t-sm-title-1:48px;
-    --t-desc-size-1:20px;
-    --m-big-title-size-1 : 48px;
-    --m-big-title-size-2 : 32px;
-    --m-big-sub-title-size-1 : 20px;
-    --m-big-sub-title-size-2 : 20px;
-    --m-sm-title-size-1 : 18px;
-    --m-desc-1 : 16px;
+    --big-title-size-1: 96px;
+    --big-title-size-2: 88px;
+    --big-sub-title-size-1: 48px;
+    --big-sub-title-size-2: 40px;
+    --sm-title-size-1: 36px;
+    --desc-size-1: 28px;
+    --desc-size-2: 24px;
+    --desc-size-3: 20px;
+    --t-big-title-1: 32px;
+    --t-sm-title-1: 48px;
+    --t-desc-size-1: 20px;
+    --m-big-title-size-1: 48px;
+    --m-big-title-size-2: 32px;
+    --m-big-sub-title-size-1: 20px;
+    --m-big-sub-title-size-2: 20px;
+    --m-sm-title-size-1: 18px;
+    --m-desc-1: 16px;
     --inset-shadow: inset 0 0 16px 13px var(--lava-black);
     --txt-sd-bk: 0 0 10px #000;
 }
 
-h1, h2, h3, h4, h5, p {
-    margin-bottom: 10px!important;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin-bottom: 10px !important;
+    line-height: 1.3!important;
 }
 
 // .section {
@@ -37,38 +43,38 @@ h1, h2, h3, h4, h5, p {
 // }
 
 .text-black {
-    color: var(--lava-black)!important;
+    color: var(--lava-black) !important;
 }
 
 .text-white {
-    color: var(--lava-white)!important;
+    color: var(--lava-white) !important;
 }
 
 .text-silver {
-    color: var(--lava-silver)!important;
+    color: var(--lava-silver) !important;
 }
 
 .text-grey {
-    color: var(--lava-grey)!important;
+    color: var(--lava-grey) !important;
 }
 
 .flex-row {
     flex-direction: row;
 }
-  
+
 .flex-col {
     flex-direction: column;
 }
 
-.flex-v-center { 
+.flex-v-center {
     display: flex;
-    align-items: center;;
+    align-items: center;
 }
 
 .flex-center {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 .flex-right {
@@ -78,8 +84,8 @@ h1, h2, h3, h4, h5, p {
 }
 
 .p-lr-0 {
-    padding-left: 0!important;
-    padding-right: 0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .m-lr-0 {
@@ -107,13 +113,13 @@ h1, h2, h3, h4, h5, p {
 .feature video {
     border-radius: 20px;
     height: 34vh;
-    box-shadow: 2px 5px 10px
+    box-shadow: 2px 5px 10px;
 }
 
 .lava-drum {
     width: 100%;
     border-radius: 30px;
-    height: 11vw
+    height: 11vw;
 }
 
 .lava-me-logo {
@@ -121,11 +127,10 @@ h1, h2, h3, h4, h5, p {
 }
 
 .shadow {
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25)
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (max-width: 575px) {
-
     /* 排版類 */
 
     .m-m-lr-0 {
@@ -154,32 +159,29 @@ h1, h2, h3, h4, h5, p {
         padding-right: 0 !important;
     }
 
-
     /* 文字類 */
 
     .normal-text {
-        font-size: 1rem
+        font-size: 1rem;
     }
 
     .feature h3 {
-        font-size: 1.5rem
+        font-size: 1.5rem;
     }
 
     .title-2 {
         font-size: 1.5rem !important;
     }
 
-
     /* 元件樣式類 */
 
     .feature video {
-        height: 180px
+        height: 180px;
     }
-
 
     .lava-drum {
         border-radius: 10px;
-        margin-top: 7px
+        margin-top: 7px;
     }
 
     .lava-me-logo {
@@ -188,7 +190,6 @@ h1, h2, h3, h4, h5, p {
 }
 
 @media screen and (max-width: 991px) and (min-width: 576px) {
-
     /* 排版類 */
 
     .mid-20 {
@@ -199,11 +200,11 @@ h1, h2, h3, h4, h5, p {
     /* 文字類 */
 
     .feature h3 {
-        font-size: 2.5vw
+        font-size: 2.5vw;
     }
 
     .feature h4 {
-        font-size: 2vw
+        font-size: 2vw;
     }
 
     .video-center-text {
@@ -215,7 +216,7 @@ h1, h2, h3, h4, h5, p {
     }
 
     .five-pattern h4 {
-        font-size: 2.5vw
+        font-size: 2.5vw;
     }
 
     .drum-title {
@@ -231,7 +232,6 @@ h1, h2, h3, h4, h5, p {
 }
 
 @media screen and (min-width: 992px) {
-
     /* 排版類 */
 
     .big-20 {
@@ -242,8 +242,6 @@ h1, h2, h3, h4, h5, p {
     /* 文字類 */
 
     /* 元件樣式類 */
-
-
 }
 
 /* Section 0 */
@@ -255,11 +253,10 @@ h1, h2, h3, h4, h5, p {
 /* Section 1 */
 
 .section-1 {
-    
     text-align: center;
 
     .fill {
-        box-shadow: unset!important;
+        box-shadow: unset !important;
     }
 
     .title {
@@ -269,7 +266,7 @@ h1, h2, h3, h4, h5, p {
 
     .sub-title {
         font-size: var(--big-sub-title-size-1);
-        color:var(--lava-grey);
+        color: var(--lava-grey);
     }
 
     .desc {
@@ -277,7 +274,6 @@ h1, h2, h3, h4, h5, p {
     }
 
     @media screen and (max-width: 575px) {
-
         .title {
             font-size: var(--m-big-title-size-1);
         }
@@ -286,13 +282,11 @@ h1, h2, h3, h4, h5, p {
             font-size: var(--m-big-sub-title-size-1);
         }
     }
-
 }
 
 /* Section 1 */
 
 .section-1 {
-    
     text-align: center;
 
     .title {
@@ -302,7 +296,7 @@ h1, h2, h3, h4, h5, p {
 
     .sub-title {
         font-size: var(--big-sub-title-size-1);
-        color:var(--lava-grey);
+        color: var(--lava-grey);
     }
 
     .desc {
@@ -310,7 +304,6 @@ h1, h2, h3, h4, h5, p {
     }
 
     @media screen and (max-width: 575px) {
-
         .title {
             font-size: var(--m-big-title-size-1);
         }
@@ -319,14 +312,12 @@ h1, h2, h3, h4, h5, p {
             font-size: var(--m-big-sub-title-size-1);
         }
     }
-
 }
 
 /* Section-2 */
 
 .section-2 {
-
-    padding: 0!important;
+    padding: 0 !important;
     height: 56.25vw;
 
     .video-box {
@@ -334,13 +325,12 @@ h1, h2, h3, h4, h5, p {
         position: relative;
 
         @media screen and (max-width: 575px) {
-
             height: 176vw;
 
             button {
                 font-size: var(--m-desc-1);
                 padding: 2px 30px;
-            }          
+            }
         }
 
         video {
@@ -356,37 +346,35 @@ h1, h2, h3, h4, h5, p {
             max-width: 90%;
             justify-content: space-around;
             transform: translateX(-50%);
-    
+
             button {
                 text-align: center;
                 border-radius: 38px;
                 padding: 5px 30px;
                 font-size: var(--desc-size-3);
-
             }
-    
+
             .full-vid {
-                border: 2px solid #79AEFF;
-                color: #79AEFF;
-                box-shadow: 0 0 8px #79AEFF;
+                border: 2px solid #79aeff;
+                color: #79aeff;
+                box-shadow: 0 0 8px #79aeff;
 
                 &:hover {
-                    background-color: #79AEFF;
+                    background-color: #79aeff;
                     color: #fff;
                 }
             }
-        
+
             .quick-intro {
-                border: 2px solid #BC6AFF;
-                color: #BC6AFF;
-                box-shadow: 0 0 8px #BC6AFF;
+                border: 2px solid #bc6aff;
+                color: #bc6aff;
+                box-shadow: 0 0 8px #bc6aff;
 
                 &:hover {
-                    background-color: #BC6AFF;
+                    background-color: #bc6aff;
                     color: #fff;
                 }
             }
-    
         }
     }
 
@@ -394,23 +382,19 @@ h1, h2, h3, h4, h5, p {
         width: 100%;
     }
 
-
     @media screen and (max-width: 575px) {
         height: 176vw;
-        
     }
-
 }
 
 /* Section-3 */
 
 .section-3 {
-
-    text-align: center!important;
+    text-align: center !important;
 
     .title {
         font-size: var(--big-title-size-1);
-        color: var(--lava-silver)
+        color: var(--lava-silver);
     }
 
     .sub-title {
@@ -420,11 +404,10 @@ h1, h2, h3, h4, h5, p {
 
     .desc {
         font-size: var(--desc-size-1);
-        color: var(--lava-white)
+        color: var(--lava-white);
     }
 
     @media screen and (max-width: 575px) {
-
         .title {
             font-size: var(--m-big-title-size-1);
         }
@@ -436,42 +419,32 @@ h1, h2, h3, h4, h5, p {
         .desc {
             font-size: var(--m-desc-1);
         }
-        
     }
-
 }
 
 .section-4 {
-
     padding: 0;
 
     .desc {
-        font-size: var(--desc-size-1);
+        font-size: var(--sm-title-size-1);
         font-weight: 600;
     }
 
     @media screen and (max-width: 575px) {
-
         .desc {
             font-size: var(--m-desc-1);
-            padding-bottom: 50px;
             text-align: center;
         }
-        
+
         .img-round {
-
             img {
-            border-radius: 30px;
+                border-radius: 30px;
             }
-
         }
-
     }
-
 }
 
 .section-5 {
-
     width: 100%;
     height: 900px;
     padding: 0;
@@ -482,15 +455,12 @@ h1, h2, h3, h4, h5, p {
     }
 
     .img-round {
-
         .banner {
             border-radius: 30px;
         }
-
     }
 
     .img-box {
-        
         transition: opacity 0.5s linear;
         border-radius: 30px;
 
@@ -499,7 +469,7 @@ h1, h2, h3, h4, h5, p {
         }
 
         .active {
-            opacity: 0
+            opacity: 0;
         }
 
         .desc {
@@ -508,18 +478,19 @@ h1, h2, h3, h4, h5, p {
             text-align: right;
             text-shadow: var(--txt-sd-bk);
         }
-
     }
 
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
         height: 750px;
         margin-bottom: -120px;
-    }
 
+        .title {
+            padding-left: 34px;
+        }
+    }
 }
 
 .section-6 {
-
     padding: 0;
 
     .title {
@@ -529,7 +500,7 @@ h1, h2, h3, h4, h5, p {
 
     .sub-title {
         font-size: var(--desc-size-3);
-        border-bottom: 1px solid rgba(0,0,0,0);
+        border-bottom: 1px solid rgba(0, 0, 0, 0);
         transition: border-bottom-color 0.2s linear;
         color: var(--lava-white);
 
@@ -539,9 +510,8 @@ h1, h2, h3, h4, h5, p {
     }
 
     .will-tab {
-
         a[role="tab"] {
-            color: var(--lava-white)!important;   
+            color: var(--lava-white) !important;
             font-size: var(--desc-size-3);
         }
 
@@ -573,17 +543,24 @@ h1, h2, h3, h4, h5, p {
         text-align: center;
     }
 
-    .grid-silver, .grid-dark {
+    .grid-silver,
+    .grid-dark {
         display: none;
 
         &.show {
             display: flex;
         }
     }
+
+    @media screen and (max-width: 575px) {
+        .title {
+            padding-left: 34px;
+        }
+    }
 }
 
 .section-7 {
-    padding: 0!important;
+    padding: 0 !important;
     height: 56.25vw;
 
     .video-box {
@@ -597,7 +574,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .section-8 {
-    padding: 0!important;
+    padding: 0 !important;
 
     .title {
         font-size: var(--big-title-size-2);
@@ -617,40 +594,35 @@ h1, h2, h3, h4, h5, p {
         text-shadow: 0 0 var(--box-shadow-blur) var(--lava-white);
     }
 
-    @media screen and (max-width: 575px){
-
+    @media screen and (max-width: 575px) {
         .title {
-            font-size: var(--m-big-title-size-2);
+            font-size: var(--m-big-title-size-1);
         }
 
         .sub-title {
-            font-size: var(--m-big-sub-title-size-2);
+            font-size: var(--m-big-title-size-2);
         }
 
         .desc {
-            font-size: var(--m-desc-1);
+            font-size: var(--m-big-sub-title-size-1);
         }
-
     }
-
 }
 
 .section-9 {
-
-    padding: 0!important;
+    padding: 0 !important;
 
     .desc {
-        font-size: var(--desc-size-3);
+        font-size: var(--desc-size-2);
 
-        @media screen and (max-width: 575px){
+        @media screen and (max-width: 575px) {
             font-size: var(--m-desc-1);
         }
     }
 }
 
 .section-10 {
-
-    padding: 0!important;
+    padding: 0 !important;
 
     .fill {
         box-shadow: unset;
@@ -666,9 +638,9 @@ h1, h2, h3, h4, h5, p {
         font-size: var(--desc-size-3);
     }
 
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
         .title {
-            font-size: var(--m-sm-title-size-1)
+            font-size: var(--m-sm-title-size-1);
         }
 
         .desc {
@@ -678,19 +650,17 @@ h1, h2, h3, h4, h5, p {
 }
 
 .section-11 {
-
-    padding: 0!important;
+    padding: 0 !important;
 
     .title {
         font-size: var(--desc-size-1);
         color: var(--lava-white);
 
-        @media screen and (max-width: 575px){
+        @media screen and (max-width: 575px) {
             text-align: center;
         }
     }
     .tab-box {
-
         border-radius: 35px;
         padding: 20px 24px;
         display: flex;
@@ -698,7 +668,7 @@ h1, h2, h3, h4, h5, p {
         width: 348px;
         background-color: #080808;
 
-        @media screen and (max-width: 575px){
+        @media screen and (max-width: 575px) {
             width: 100%;
 
             div {
@@ -708,14 +678,14 @@ h1, h2, h3, h4, h5, p {
         }
 
         div {
-            $x : 0;
-            $y : 0;
-            $blur : 8px;
-            $yl: #F4C043;
-            $rd: #FF3937;
-            $pp: #AF49FF;
-            $bl: #5995FF;
-            $gr: #77D660;
+            $x: 0;
+            $y: 0;
+            $blur: 8px;
+            $yl: #f4c043;
+            $rd: #ff3937;
+            $pp: #af49ff;
+            $bl: #5995ff;
+            $gr: #77d660;
 
             border-radius: 100%;
             border-width: 6px;
@@ -754,13 +724,11 @@ h1, h2, h3, h4, h5, p {
                 border-color: $gr;
                 box-shadow: $x $y $blur $gr;
             }
-
-
         }
     }
 
     .app-box {
-        background-image: url('/wp-content/uploads/lava-me-air-section-11-phone-bg.webp');
+        background-image: url("/wp-content/uploads/lava-me-air-section-11-phone-bg.webp");
         width: 100%;
         position: relative;
         border-radius: 100px;
@@ -777,8 +745,8 @@ h1, h2, h3, h4, h5, p {
                 border-radius: 30px;
                 position: relative;
                 margin-bottom: 10px;
-                cursor: pointer; 
-                transition: transform 0.2s linear;   
+                cursor: pointer;
+                transition: transform 0.2s linear;
                 &.selected {
                     transform: scale(1.2);
                 }
@@ -807,7 +775,7 @@ h1, h2, h3, h4, h5, p {
         font-weight: 600;
     }
 
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
         .desc {
             text-align: center;
             font-size: 20px;
@@ -816,7 +784,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .section-13 {
-    padding: 0!important;
+    padding: 0 !important;
 
     .title {
         text-shadow: 0 0 var(--box-shadow-blur) var(--lava-silver);
@@ -828,9 +796,9 @@ h1, h2, h3, h4, h5, p {
         font-size: var(--desc-size-3);
     }
 
-    @media screen and (max-width: 575px){
+    @media screen and (max-width: 575px) {
         .title {
-            font-size: var(--m-sm-title-size-1)
+            font-size: var(--m-sm-title-size-1);
         }
 
         .desc {
@@ -840,16 +808,18 @@ h1, h2, h3, h4, h5, p {
 }
 
 .section-14 {
-    padding: 0!important;
+    padding: 0 !important;
     height: 56.25vw;
 
-    @media screen and (max-width: 575px){
-        height: 400px;
-    }
-
     .title {
-        font-size: var(--desc-size-1);
+        font-size: var(--big-sub-title-size-2);
         color: var(--lava-white);
+        text-align: center;
+
+        span {
+            font-size: var(--big-title-size-2);
+            font-weight: 600;
+        }
     }
 
     .desc {
@@ -861,17 +831,24 @@ h1, h2, h3, h4, h5, p {
         width: 100%;
         border-radius: 30px;
     }
+
+    @media screen and (max-width: 575px) {
+        height: 400px;
+
+        .desc {
+            padding-left: 34px;
+        }
+    }
 }
 
 .section-15 {
-
     box-shadow: var(--inset-shadow);
     width: 100%;
     height: 56.25vw;
     position: relative;
 
     .banner {
-        background-color: unset!important;
+        background-color: unset !important;
     }
 
     video {
@@ -890,52 +867,48 @@ h1, h2, h3, h4, h5, p {
             font-size: var(--big-title-size-2);
             color: var(--lava-white);
         }
-    
+
         .sub-title {
             font-size: var(--big-sub-title-size-2);
             color: var(--lava-white);
         }
-    
+
         .desc {
             font-size: var(--desc-size-2);
             color: var(--lava-grey);
         }
 
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: 1024px) {
             .title {
                 font-size: var(--t-big-title-1);
             }
-    
+
             .sub-title {
                 font-size: var(--t-sm-title-1);
             }
-    
+
             .desc {
                 font-size: var(--t-desc-size-1);
             }
         }
-    
-        @media screen and (max-width: 575px){
+
+        @media screen and (max-width: 575px) {
             .title {
                 font-size: var(--m-big-title-size-2);
             }
-    
+
             .sub-title {
                 font-size: var(--m-big-sub-title-size-2);
-            }   
-    
+            }
+
             .desc {
                 font-size: var(--m-desc-1);
             }
         }
-
     }
-
-    
 }
 
 .section-16 {
-
     width: 100%;
     padding: 0;
 
@@ -959,15 +932,12 @@ h1, h2, h3, h4, h5, p {
     }
 
     .img-round {
-
         .banner {
             border-radius: 30px;
         }
-
     }
 
     .img-box {
-        
         transition: opacity 0.5s linear;
         border-radius: 30px;
 
@@ -976,7 +946,7 @@ h1, h2, h3, h4, h5, p {
         }
 
         .active {
-            opacity: 0
+            opacity: 0;
         }
 
         .desc {
@@ -985,12 +955,16 @@ h1, h2, h3, h4, h5, p {
             text-align: right;
             text-shadow: 0 0 10px #000;
         }
+    }
 
+    .will-center {
+        display: flex;
+        align-items: center;
     }
 
     @media screen and (max-width: 575px) {
         .title {
-            font-size: var(--m-big-title-size-1)
+            font-size: var(--m-big-title-size-1);
         }
 
         .sub-title {
@@ -1001,11 +975,10 @@ h1, h2, h3, h4, h5, p {
             font-size: var(--m-desc-1);
         }
     }
-
 }
 
 .section-17 {
-    padding: 0!important;
+    padding: 0 !important;
 
     .title {
         font-size: var(--sm-title-size-1);
@@ -1015,36 +988,8 @@ h1, h2, h3, h4, h5, p {
     }
 
     .desc {
-        font-size:var(--desc-size-3);
+        font-size: var(--desc-size-3);
         text-shadow: var(--txt-sd-bk);
-    }
-
-    @media screen and (max-width: 575px){
-        .title {
-            font-size: var(--m-sm-title-size-1);
-        }
-
-        .desc {
-            font-size:var(--m-desc-1);
-        }
-    }
-}
-
-.section-18 {
-    padding: 0!important;
-
-    img {
-        border-radius: 30px;
-    }
-
-    .title {
-        font-size:var(--sm-title-size-1);
-        color:var(--lava-white);
-    }
-
-    .desc {
-        font-size:var(--desc-size-3);
-        color:var(--lava-white);
     }
 
     @media screen and (max-width: 575px) {
@@ -1055,19 +1000,44 @@ h1, h2, h3, h4, h5, p {
         .desc {
             font-size: var(--m-desc-1);
         }
-        
+    }
+}
+
+.section-18 {
+    padding: 0 !important;
+
+    img {
+        border-radius: 30px;
+    }
+
+    .title {
+        font-size: var(--sm-title-size-1);
+        color: var(--lava-white);
+    }
+
+    .desc {
+        font-size: var(--desc-size-3);
+        color: var(--lava-white);
+    }
+
+    @media screen and (max-width: 575px) {
+        .title {
+            font-size: var(--m-sm-title-size-1);
+        }
+
+        .desc {
+            font-size: var(--m-desc-1);
+        }
     }
 }
 
 .section-19 {
-
-    padding: 0!important;
+    padding: 0 !important;
     width: 100%;
     height: 56.25vw;
     position: relative;
 
     .video-box {
-
         video {
             width: 100%;
         }
@@ -1088,7 +1058,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .section-20 {
-    padding: 0!important;
+    padding: 0 !important;
 
     .title {
         font-size: var(--big-sub-title-size-2);
@@ -1109,7 +1079,6 @@ h1, h2, h3, h4, h5, p {
     }
 
     @media screen and (max-width: 575px) {
-    
         .title {
             font-size: var(--m-big-sub-title-size-2);
         }
