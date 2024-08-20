@@ -1,3 +1,52 @@
+.footer-2 div[id^="block"] i {
+  display: none;
+}
+
+@media screen and (max-width: 549px){
+
+  .footer-2 div[id^="block"] {
+    margin-bottom: 0;
+  }
+
+  .footer-2 div[id^="block"] div[id^="text"] p {
+      margin-bottom: 0;
+      max-height: 0;
+      opacity: 0;
+      transition: maxHeight 1s linear, marginBottom 1s linear;
+  }
+
+  .footer-2 div[id^="block"] div[id^="text"] p.active {
+    max-height: 100px;
+    opacity: 1;
+    margin-bottom: 10px;
+  }
+
+  .footer-2 div[id^="block"] i {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    transition: transform 0.1s linear;
+    display: var(--fa-display,inline-block);
+  }
+
+  .footer-2 div[id^="block"] i.active {
+    transform: rotate(180deg);
+  }
+
+  .footer-2 .is-divider.small {
+    margin-top: .66em;
+    max-width: 100% !important;
+    height: 1px !important;
+  }
+
+  .footer-downloadAPP.downloadAPP {
+    flex-direction: row!important;
+  }
+
+}
+
+/* 上次更新 */
+
 .footer-2 p a, .footer-2 .widget-title {
 	color:#E8DECF!important;
 }
@@ -11,8 +60,6 @@
 
 .footer-downloadAPP img {
   width: 120px;
-	border-radius: 4px;
- 
 }
 
 .footer-2 {
@@ -74,11 +121,34 @@
     max-width: 100% !important;
   }
 
+  .footer-2 .social-icons.follow-icons {
+    width: 100%;
+    justify-content: left;
+    font-size: 25px;
+    height: 39px;
+  }
+
   #footer-bottom {
     flex-direction: column;
   }
 
   #footer-bottom .right-reserved {
     text-align: left!important;
+  }
+
+  .footer-downloadAPP img {
+    width: 120px;
+    margin-top: 30px;
+    margin-bottom: -45px;
+}
+
+  .footer-downloadAPP a[href*="google"] img {
+    width: 127px;
+    margin-left: 5px;
+    box-shadow: unset;
+  }
+
+  .absolute-footer {
+    margin-top: -60px;
   }
 }
