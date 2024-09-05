@@ -20,7 +20,7 @@ def html_to_md(html):
 def gpt_e2m(text):
     
     # 放置 key（之後要換！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！）
-    api_key = 'my-api-key'
+    api_key = os.environ.get("OPENAI_API_KEY")
 
     # 確認 API 金鑰已設置
     if api_key is None:
