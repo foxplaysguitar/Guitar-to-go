@@ -14,13 +14,43 @@ ROOT_PATH = os.path.expanduser("~")
 DESKTOP_PATH = os.path.join(ROOT_PATH, 'Desktop')
 GTG_ARTICLES_FOLDER = os.path.join(DESKTOP_PATH, 'gtg-articles')
 HREF_CSS_RULES = {
-    "guitargirlmag.com": 'a[href*="music-news"]::attr(href)'
+    "guitargirlmag.com": {
+        'sel': 'a[href*="music-news"]::attr(href)',
+    },
+    "www.guitarworld.com": {
+        'sel': '.listingResult a.article-link::attr(href)'
+    },
+    "acousticguitarmagazine.jp": {
+        'sel': '.post-wrap a::attr(href)',
+    },
+    "guitargearfinder.com": {
+        'sel': '.post-image a::attr(href)'
+    },
+    "www.guitarplayer.com": {
+        'sel': '.feature-block-item-wrapper a, .listingResult a::attr(href)'
+    }
 }
 CONTENT_CSS_RULES = {
+    # "example.com":{
+    #     "title": ,   預設值 title::text
+    #     "content":,
+    #     "content_index":,
+    #     "source_page": 預設值 link[rel="canonical"]::attr(href)
+    # }
     "guitargirlmag.com": {
-        "title":'title::text',
         "content": 'article .vc_column_container.td-pb-span8 .wpb_wrapper',
-        "source_page": 'link[rel="canonical"]::attr(href)',
+    },
+    "www.guitarworld.com": {
+        'content': '#article-body'
+    },
+    "acousticguitarmagazine.jp":{
+        "content": "main",
+    },
+    "guitargearfinder.com": {
+        'content': 'article'
+    },
+    "www.guitarplayer.com": {
+        'content': 'article'
     }
 }
 
@@ -189,18 +219,31 @@ def save_to_file(post_title, post_source_page, post_content, slug , file_type , 
     print(f"{post_title}.{file_type}檔案建立完畢！")
 
 class Spider1Spider(scrapy.Spider):
+    
+    # 蜘蛛基本設定
     name = "spider1"
-    allowed_domains = ["guitargirlmag.com", "guitarworld.com", "acousticguitarmagazine.jp"]
-    guitar_girl_start = [f"https://guitargirlmag.com/category/news/music-news/page/{i}/" for i in range(1,8)]
-    # ag_magazine_start = [f"https://acousticguitarmagazine.jp/gears/page/{i}/" for i in range(1, 8)]
-    start_urls = [] + guitar_girl_start 
+    allowed_domains = ["guitargirlmag.com", "www.guitarworld.com", "acousticguitarmagazine.jp", "guitargearfinder.com", "www.guitarplayer.com"]
 
+    # 爬取網域設定
+    guitar_girl_start = [f"https://guitargirlmag.com/category/reviews/gear-reviews/page/{i}/" for i in range(1,6)]
+    guitar_world_start = [f"https://www.guitarworld.com/news/page/{i}" for i in range(1,6)] + [f'https://www.guitarworld.com/features/page/{i}' for i in range(1,6)] 
+    acoustic_guitar_jp_start = [f"https://acousticguitarmagazine.jp/gears/page/{i}/" for i in range(1, 6)]
+    guitar_gear_start = [f"https://guitargearfinder.com/category/reviews/electric-guitars/", f"https://guitargearfinder.com/category/reviews/single-effect-pedals/", f"https://guitargearfinder.com/category/reviews/multi-effects-pedals/"]
+    guitar_player_start = [f"https://www.guitarplayer.com/gear/page/{i}" for i in range(1, 6)] + [f"https://www.guitarplayer.com/news/page/{i}" for i in range(1,6)]
+    start_urls = [] + guitar_girl_start + guitar_world_start  + acoustic_guitar_jp_start + guitar_gear_start + guitar_player_start
+
+    # guitargirl 新版還沒測試！！！！！！！！！！！！！！！！！！！！！！！！
 
     def parse(self, response):  # response 代表 requests 後回傳的內容
 
         # 確認主資料夾是否存在，若否，建立一個！
         if not os.path.exists(GTG_ARTICLES_FOLDER) :
+            print("確認網域資料夾不存在")
             os.makedirs(GTG_ARTICLES_FOLDER)
+            print("已建立網域資料夾")
+
+        else :
+            print("確認網域資料夾已存在")
 
         # 開始丟入執行
         yield response.follow(      # 傳遞當前爬取的網站給對應function 處理，同時用 meta 傳遞資訊
@@ -211,20 +254,45 @@ class Spider1Spider(scrapy.Spider):
         
     # 抓取文章連結
     def parse_href(self, response):
-
+        
         # 取得當前 domain
         category = response.meta.get("category_page")
         domain = re.findall(r'^https?:\/\/([^\/]+)', category)[0]
         domain_folder = os.path.join(GTG_ARTICLES_FOLDER, domain)
-
-        # 確認網站資料夾是否存在
-        if not os.path.join(domain_folder) :
-            os.makedirs(domain_folder)
+        print(f"當前Domain: {domain}")
 
         # 根據規則抓取內容頁的URL
-        css_rule = HREF_CSS_RULES[domain]
+        domain_rule = HREF_CSS_RULES[domain]
+        css_rule = domain_rule['sel']
+        try :
+            must_have = domain_rule['must_have']
+        except :
+            must_have = ['']
+
+        try :
+            must_not = domain_rule['must_not']
+        except :
+            must_not = []
+
+        print(f"domain_rule: {domain_rule}")
+        print(f"css_rule: {css_rule}")
+        print(f"must_have: {','.join(must_have)}")
+        print(f"must_not: {','.join(must_not)}")
+
         for href in response.css(css_rule).getall():
             if href != category :
+
+                must_have_pass = False      # 必須包含的內容
+                for mh in must_have :       
+                    if mh in href :
+                        must_have_pass = True
+                    
+                if not must_have_pass :
+                    continue
+                
+                for mn in must_not :        # 不可包含的內容
+                    if mn in href :
+                        continue
                 
                 yield response.follow(
                     href, 
@@ -243,17 +311,30 @@ class Spider1Spider(scrapy.Spider):
         # 取出 CSS RULE
         R = CONTENT_CSS_RULES[domain]
 
-        # 取得標題
-        title = response.css(R["title"]).get()
+        # 取得 CSS RULE Key
+        R_KEYS = R.keys()
+
+        # 取得標題，若無設定，擷取預設值
+        if 'title' in R_KEYS :
+            title = response.css(R["title"]).get()
+        else :
+            title = response.css("title::text").get()
         
-        # 取得內容
-        content = response.css(R["content"]).get()
+        # 取得內容，content_index 預設為 0
+        try :
+            content_index = R["content_index"]
+        except :
+            content_index = 0
+        content = response.css(R["content"])[content_index].get()
 
         # 取得 Source_page
-        source_page = response.css(R["source_page"]).get()
+        if 'source_page' in R_KEYS :
+            source_page = response.css(R["source_page"]).get()
+        else :
+            source_page = response.css('link[rel="canonical"]::attr(href)').get()
 
         # 取得 Slug
-        slug = re.findall('([^\/]+)\/?$', source_page)[0]
+        slug = re.findall(r'([^\/]+)\/?$', source_page)[0]
 
         # 取得 Site Folder
         site_folder = response.meta.get('site_folder')
@@ -275,41 +356,54 @@ class Spider1Spider(scrapy.Spider):
         md_content = delete_md_links(md_content)
 
         # 內容處理：下載圖檔
-        img_reg = '\!\[[^\]]*\]\(([^\)]+)\)'
+        img_reg = r'\!\[[^\]]*\]\(([^\)]+)\)'
         img_hrefs = re.findall(img_reg, md_content)
         img_index = 0
-        for href in img_hrefs :
-            if rq.get(href).status_code == 200:     # 圖片連結可直接下載
-                print(f'獲取圖檔成功，正在下載: {href}')
-                file_name = img_download_compress(
-                    image_url=href, 
-                    slug = slug, 
-                    image_index = img_index,
-                    site_folder= site_folder
-                    )
-                img_index += 1
-                
-                # 修正 MD 中連結
-                img_reg_revise = rf'(?>=\!\[[^\]]*\]\(){href}(?=\))'
-                md_content = re.sub(img_reg_revise, file_name, md_content)
-
+        for h in img_hrefs :
+            if '\n' in h :
+                href = re.sub(r'\n', '', h)
             else :
-                print(f"獲取圖檔失敗： {href}")
-                print(f"嘗試圖檔連結加入 Domain")
-                if rq.get(f"{domain}{href}").status_code == 200 :   # 圖片連結需加上Domain
-                    print(f"獲取圖檔成功，正在下載： {domain}{href}")
-                    file_name = img_download_compress(image_url=f"{domain}{href}", slug = slug, image_index = img_index)
+                href = h
+            print(f"獲取圖檔連結 => {href}")
+            try:
+                if rq.get(href).status_code == 200:     # 圖片連結可直接下載
+                    print(f'獲取圖檔成功，正在下載')
+                    file_name = img_download_compress(
+                        image_url=href, 
+                        slug = slug, 
+                        image_index = img_index,
+                        site_folder= site_folder
+                        )
                     img_index += 1
-
+                    
                     # 修正 MD 中連結
                     img_reg_revise = rf'(?>=\!\[[^\]]*\]\(){href}(?=\))'
                     md_content = re.sub(img_reg_revise, file_name, md_content)
-
+            
                 else :
+                    print(f"獲取圖檔失敗")
+                    print(f"嘗試圖檔連結加入 Domain")
+                    if rq.get(f"{domain}{href}").status_code == 200 :   # 圖片連結需加上Domain
+                        print(f"獲取圖檔成功，正在下載： {domain}{href}")
+                        file_name = img_download_compress(image_url=f"{domain}{href}", slug = slug, image_index = img_index)
+                        img_index += 1
+
+                        # 修正 MD 中連結
+                        img_reg_revise = rf'(?>=\!\[[^\]]*\]\(){href}(?=\))'
+                        md_content = re.sub(img_reg_revise, file_name, md_content)
+
+                    else :
+                        print(f"獲取圖檔失敗: {domain}{href}")      # 圖片無法下載，刪除 Markdown 中的連結
+                        print(f"刪除圖檔連結")
+                        img_reg_del = rf'\!\[[^\]]*\]\({href}\)'
+                        md_content = re.sub(img_reg_del, '', md_content)
+
+            except :
                     print(f"獲取圖檔失敗: {domain}{href}")      # 圖片無法下載，刪除 Markdown 中的連結
                     print(f"刪除圖檔連結")
                     img_reg_del = rf'\!\[[^\]]*\]\({href}\)'
-                    md_content = re.sub(img_reg_del, '', md_content)            
+                    md_content = re.sub(img_reg_del, '', md_content)
+
 
         # 內容處理：翻譯
         trans_content = gpt_e2m(md_content)    # 翻譯文
@@ -322,103 +416,6 @@ class Spider1Spider(scrapy.Spider):
                 slug=slug,
                 folder_path=site_folder , 
                 file_type = 'txt')
-
-    # # 抓取文章連結
-    # def parse_href_guitargirlmag(self, response):
-    #     # 根據規則抓取內容頁的URL
-    #     for href in response.css('a[href*="music-news"]::attr(href)').getall():
-    #         if href != 'https://guitargirlmag.com/category/news/music-news/' :
-                
-    #             yield response.follow(
-    #                 href, 
-    #                 self.parse_content_guitargirlmag, 
-    #                 meta={'site_folder':response.meta.get('site_folder')}   # 從 response 的 meta 中取得 site_folder 的資訊
-    #                 )
-
-    # #guitargirlmag Start
-    # def parse_href_rittormusic(self, response):
-    #     # 根據規則抓取內容頁的URL
-    #     for href in response.css('a[href*="music-news"]::attr(href)').getall():
-    #         if href != 'https://guitargirlmag.com/category/news/music-news/' :
-                
-    #             yield response.follow(
-    #                 href, 
-    #                 self.parse_content_guitargirlmag, 
-    #                 meta={'site_folder':response.meta.get('site_folder')}   # 從 response 的 meta 中取得 site_folder 的資訊
-    #                 )
-
-    # # 處理文章內容
-    # def parse_content_guitargirlmag(self, response):
-    #     # 取得內容
-    #     title = response.css('title::text').get()
-    #     content = response.css('article .vc_column_container.td-pb-span8 .wpb_wrapper').get()
-    #     source_page = response.css('link[rel="canonical"]::attr(href)').get()
-    #     domain = re.findall('https?:\/\/[^\/]+', source_page)[0]
-    #     slug = re.findall('([^\/]+)\/?$', source_page)[0]
-    #     site_folder = response.meta.get('site_folder')
-    #     file_path = os.path.join(site_folder, f"{title}.txt")
-
-    #     if os.path.exists(file_path):
-    #         print("檔案已存在，不爬取")
-    #         return None
-
-    #     # 標題防呆處理
-    #     title = re.sub(r':','：',title)
-
-    #     # 內容處理：轉化成 MarkDown
-    #     md_content = html_to_md(content)
-
-    #     # 內容處理：刪除連結
-    #     md_content = delete_md_links(md_content)
-
-    #     # 內容處理：下載圖檔
-    #     img_reg = '\!\[[^\]]*\]\(([^\)]+)\)'
-    #     img_hrefs = re.findall(img_reg, md_content)
-    #     img_index = 0
-    #     for href in img_hrefs :
-    #         if rq.get(href).status_code == 200:     # 圖片連結可直接下載
-    #             print(f'獲取圖檔成功，正在下載: {href}')
-    #             file_name = img_download_compress(
-    #                 image_url=href, 
-    #                 slug = slug, 
-    #                 image_index = img_index,
-    #                 site_folder= site_folder
-    #                 )
-    #             img_index += 1
-                
-    #             # 修正 MD 中連結
-    #             img_reg_revise = rf'(?>=\!\[[^\]]*\]\(){href}(?=\))'
-    #             md_content = re.sub(img_reg_revise, file_name, md_content)
-
-    #         else :
-    #             print(f"獲取圖檔失敗： {href}")
-    #             print(f"嘗試圖檔連結加入 Domain")
-    #             if rq.get(f"{domain}{href}").status_code == 200 :   # 圖片連結需加上Domain
-    #                 print(f"獲取圖檔成功，正在下載： {domain}{href}")
-    #                 file_name = img_download_compress(image_url=f"{domain}{href}", slug = slug, image_index = img_index)
-    #                 img_index += 1
-
-    #                 # 修正 MD 中連結
-    #                 img_reg_revise = rf'(?>=\!\[[^\]]*\]\(){href}(?=\))'
-    #                 md_content = re.sub(img_reg_revise, file_name, md_content)
-
-    #             else :
-    #                 print(f"獲取圖檔失敗: {domain}{href}")      # 圖片無法下載，刪除 Markdown 中的連結
-    #                 print(f"刪除圖檔連結")
-    #                 img_reg_del = rf'\!\[[^\]]*\]\({href}\)'
-    #                 md_content = re.sub(img_reg_del, '', md_content)            
-
-    #     # 內容處理：翻譯
-    #     trans_content = gpt_e2m(md_content)    # 翻譯文
-
-    #     if title and md_content and trans_content and source_page :              # 若四者都存在，存進檔案中
-    #         save_to_file(
-    #             post_title=title, 
-    #             post_source_page=source_page, 
-    #             post_content=f'# 中文版：\n{trans_content}\n# 原文版：\n{md_content} ', 
-    #             slug=slug,
-    #             folder_path=site_folder , 
-    #             file_type = 'txt')
 
 if __name__ == '__main__':
 
