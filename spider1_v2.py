@@ -7,7 +7,6 @@ from PIL import Image
 from openai import OpenAI
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
-import os
 
 # 全域變數設定
 ROOT_PATH = os.path.expanduser("~")
@@ -67,7 +66,7 @@ def html_to_md(html):
 # GPT 翻譯
 def gpt_e2m(text):
     
-    # 放置 key（之後要換！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！）
+    # 放置 key
     api_key = os.environ.get("OPENAI_API_KEY")
 
     # 確認 API 金鑰已設置
@@ -190,7 +189,7 @@ def delete_md_links(markdown_text):
 
     return md_content
 
-# 文案存進檔案
+# 文案存進檔案 (含覆蓋功能) 
 def save_to_file(post_title, post_source_page, post_content, slug , file_type , folder_path = "D:/guitar-articles"):
     # 檢查資料夾是否存在，若不存在則創建資料夾
     if not os.path.exists(folder_path):
@@ -333,6 +332,8 @@ class Spider1Spider(scrapy.Spider):
         else :
             source_page = response.css('link[rel="canonical"]::attr(href)').get()
 
+        print(f"開始處理網頁...\nTitle：{title}\nSource_Page：{source_page}")
+
         # 取得 Slug
         slug = re.findall(r'([^\/]+)\/?$', source_page)[0]
 
@@ -341,10 +342,14 @@ class Spider1Spider(scrapy.Spider):
 
         # 取得 File_path
         file_path = os.path.join(site_folder, f"{slug}.txt")
+        
+        print(f"確認檔案連結：{file_path}")
 
         if os.path.exists(file_path):
             print("檔案已存在，不爬取")
             return None
+        
+        print(f"檔案不存在，將繼續處理")
 
         # 標題防呆處理
         title = re.sub(r':','：',title)
@@ -427,3 +432,5 @@ if __name__ == '__main__':
 
     # 開始運行
     process.start()  # 這行會阻塞，直到所有的蜘蛛完成運行
+
+    input("按任意鍵以退出...")  # 這行會等待你按下按鍵後才會關閉窗口
