@@ -7,9 +7,16 @@ from PIL import Image
 from openai import OpenAI
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
+import sys
+
+# 動態獲取路徑
+def get_base_path():
+    if hasattr(sys, '_MEIPASS'):
+        return sys._MEIPASS
+    return os.path.dirname(os.path.abspath(__file__))
 
 # 全域變數設定
-ROOT_PATH = os.path.expanduser("~")
+ROOT_PATH = get_base_path()
 DESKTOP_PATH = os.path.join(ROOT_PATH, 'Desktop')
 GTG_ARTICLES_FOLDER = os.path.join(DESKTOP_PATH, 'gtg-articles')
 HREF_CSS_RULES = {
