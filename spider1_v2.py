@@ -11,12 +11,10 @@ import sys
 
 # 動態獲取路徑
 def get_base_path():
-    if hasattr(sys, '_MEIPASS'):
-        return sys._MEIPASS
-    return os.path.dirname(os.path.abspath(__file__))
+    return os.path.dirname(os.path.abspath(sys.argv[0]))
 
 # 全域變數設定
-ROOT_PATH = get_base_path()
+ROOT_PATH = r'C:\\Users\\movin\\OneDrive'
 DESKTOP_PATH = os.path.join(ROOT_PATH, 'Desktop')
 GTG_ARTICLES_FOLDER = os.path.join(DESKTOP_PATH, 'gtg-articles')
 HREF_CSS_RULES = {
@@ -428,6 +426,13 @@ class Spider1Spider(scrapy.Spider):
                 slug=slug,
                 folder_path=site_folder , 
                 file_type = 'txt')
+            
+        else :
+            print('有東西沒有!!!!')
+            print(f'title: {title}')
+            print(f"md_content : {len(md_content)}")
+            print(f"trans_content: {len(trans_content)}")
+            print(f"source_page: {source_page}")
 
 if __name__ == '__main__':
 
